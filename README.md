@@ -15,7 +15,7 @@ export GOOGLE_CLOUD_KEYFILE_JSON="/Users/username/gcp/serviceaccount.json"
 * rename without the .example suffix and enter your GCP project name
 
 ## requirements
-* Terraform v 0.12.x
+* Terraform v 0.14.x
 
 ## deploy
 

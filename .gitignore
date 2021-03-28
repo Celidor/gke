@@ -10,6 +10,7 @@
 
 # Local state
 terraform.tfstate.d/
+.terraform.lock.hcl
 
 # Credentials
 backend.tf
