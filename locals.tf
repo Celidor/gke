@@ -10,3 +10,10 @@ locals {
     "roles/stackdriver.resourceMetadata.writer"
   ]
 }
+
+locals {
+  service_apis = [
+    "container.googleapis.com",
+    "iam.googleapis.com"
+  ]
+}
