@@ -1,6 +1,6 @@
 # gke
 * Google Kubernetes Engine deployed using Terraform
-* For use with learnsecurity lab guide
+* For use with Paul Schwarzenberger's AWS, Azure and GCP security course
 
 ## set up project and credentials
 * create GCP project
