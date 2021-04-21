@@ -25,7 +25,7 @@ resource "google_container_cluster" "primary" {
   }
 }
 
-resource "google_container_node_pool" "primary_preemptible_nodes" {
+resource "google_container_node_pool" "primary_nodes" {
   name       = "${var.name}-${local.env}"
   location   = var.region
   project    = var.project
@@ -33,8 +33,7 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
   node_count = 1
 
   node_config {
-    preemptible     = true
-    machine_type    = "n1-standard-1"
+    machine_type    = "e2-micro"
     service_account = google_service_account.service_account.email
 
     metadata = {
