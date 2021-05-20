@@ -18,3 +18,7 @@ variable "zone" {
 variable "name" {
   default = "seceng"
 }
+
+variable "machine_type" {
+  default = "e2-small"
+}

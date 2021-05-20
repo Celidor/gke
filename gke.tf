@@ -33,7 +33,7 @@ resource "google_container_node_pool" "primary_nodes" {
   node_count = 1
 
   node_config {
-    machine_type    = "e2-micro"
+    machine_type    = var.machine_type
     service_account = google_service_account.service_account.email
 
     metadata = {
