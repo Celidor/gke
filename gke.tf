@@ -11,6 +11,10 @@ resource "google_container_cluster" "primary" {
   network                  = google_compute_network.vpc.self_link
   subnetwork               = google_compute_subnetwork.gke_subnet.self_link
 
+  release_channel {
+    channel = "RAPID"
+  }
+
   master_auth {
     username = ""
     password = ""
