@@ -14,6 +14,7 @@ locals {
 locals {
   service_apis = [
     "container.googleapis.com",
+    "containersecurity.googleapis.com",
     "iam.googleapis.com"
   ]
 }
