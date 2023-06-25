@@ -1,4 +1,5 @@
 resource "google_container_cluster" "primary" {
+  provider = google-beta
   name     = "${var.name}-${local.env}"
   location = var.region
   project  = var.project
@@ -11,17 +12,22 @@ resource "google_container_cluster" "primary" {
   network                  = google_compute_network.vpc.self_link
   subnetwork               = google_compute_subnetwork.gke_subnet.self_link
 
+  master_auth {
+    client_certificate_config {
+      issue_client_certificate = false
+    }
+  }
+
   release_channel {
     channel = "RAPID"
   }
 
-  master_auth {
-    username = ""
-    password = ""
-
-    client_certificate_config {
-      issue_client_certificate = false
+  protect_config {
+    workload_config {
+      audit_mode = "BASIC"
     }
+
+    workload_vulnerability_mode = "BASIC"
   }
 
   node_config {
